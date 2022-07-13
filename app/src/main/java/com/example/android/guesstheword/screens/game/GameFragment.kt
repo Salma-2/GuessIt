@@ -71,6 +71,10 @@ class GameFragment : Fragment() {
                 }
             })
 
+        viewModel.currentTime.observe(
+            viewLifecycleOwner,
+            Observer { time -> updateTimerText(time) })
+
 
         binding.correctButton.setOnClickListener {
             viewModel.onCorrect()
@@ -101,5 +105,9 @@ class GameFragment : Fragment() {
 
     private fun updateScoreText(score: Int) {
         binding.scoreText.text = score.toString()
+    }
+
+    private fun updateTimerText(time: Long) {
+        binding.timerText.text = time.toString()
     }
 }
