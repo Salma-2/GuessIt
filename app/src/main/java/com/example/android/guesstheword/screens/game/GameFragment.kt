@@ -52,7 +52,7 @@ class GameFragment : Fragment() {
         )
         viewModel = ViewModelProvider(this).get(GameViewModel::class.java)
         Log.i("GameViewModel", "Called ViewModelProvider ")
-
+        binding.gameViewModel = viewModel
 
         /*Setting up observation relationship*/
         viewModel.word.observe(viewLifecycleOwner, Observer { newWord ->
@@ -76,13 +76,6 @@ class GameFragment : Fragment() {
             Observer { time -> updateTimerText(time) })
 
 
-        binding.correctButton.setOnClickListener {
-            viewModel.onCorrect()
-        }
-        binding.skipButton.setOnClickListener {
-            viewModel.onSkip()
-        }
-
         return binding.root
 
     }
@@ -100,7 +93,6 @@ class GameFragment : Fragment() {
     /** Methods for updating the UI **/
     private fun updateWordText(word: String) {
         binding.wordText.text = word
-
     }
 
     private fun updateScoreText(score: Int) {
