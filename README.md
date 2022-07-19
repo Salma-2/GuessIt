@@ -9,3 +9,5 @@ If you get the word right, press Got It. If you're stuck, press Skip. The game r
 <img src="https://user-images.githubusercontent.com/48512714/179666866-5e1a1c15-0881-4004-9d3e-019feb0222cb.png" width="200">
 <img src="https://user-images.githubusercontent.com/48512714/179666560-5c903421-0565-4e97-b1d5-3f9b7091bb5a.png" width="200">
 </p>
+
+*This app is part of Advanced Android Kotlin Development Nanodegree Program on Udacity*
